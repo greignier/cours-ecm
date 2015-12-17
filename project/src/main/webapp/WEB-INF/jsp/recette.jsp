@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-    <fragments:header  page-name="recette"/>
+    <fragments:header  name="recette"/>
 
     <div class="container">
         <fragments:recipe recipe="${recipe}" />

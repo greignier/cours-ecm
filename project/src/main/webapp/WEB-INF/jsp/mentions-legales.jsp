@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
-    <fragments:header  page-name="mentions"/>
+    <fragments:header  name="mentions"/>
 
     <div class="container">
         <h1>Mentions légales</h1>

@@ -1,7 +1,6 @@
 <%@ tag body-content="empty" pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ attribute name="page-name"%>
+<%@ attribute name="name"%>
 
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
@@ -17,8 +16,8 @@
 
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav">
-                ${name}="recettes"><li class ="active"><a href="/recettes">Toutes les recettes</a></li>
-                <li><a href="/recette-du-moment">Recette du moment</a></li>
+                <li class=${name == "recettes" ? "active" : ""}><a href="/recettes">Toutes les recettes</a></li>
+                <li class=${name == "recette-moment" ? "active" : ""}><a href="/recette-du-moment">Recette du moment</a></li>
             </ul>
         </div>
     </div>
