@@ -107,7 +107,25 @@ public class IndexControllerTest {
         pagination.setCount(0);
         pagination.setPageSize(50);
         assertEquals(pagination.getPageCount() , 1);
-
     }
+
+    @Test
+    public void getPagesTest() throws Exception {
+        Pagination pagination = new Pagination() ;
+
+        pagination.setCount(30);
+        pagination.setPageSize(10);
+        assertFalse(pagination.getPages().contains(4));
+
+        pagination.setCount(30);
+        pagination.setPageSize(1);
+        assertTrue(pagination.getPages().size() == pagination.PAGINATION_SIZE);
+
+        pagination.setPageIndex(15);
+        assertFalse(pagination.getPages().contains(10));
+        assertFalse(pagination.getPages().contains(21));
+        assertTrue(pagination.getPages().size() == pagination.PAGINATION_SIZE);
+    }
+
 
 }
