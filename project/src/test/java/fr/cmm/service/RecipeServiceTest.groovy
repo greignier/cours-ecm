@@ -38,23 +38,20 @@ public class RecipeServiceTest {
     }
 
     @Test
-    public void save() {
-        Recipe recipe = new Recipe();
-        recipe.setTitle("test recipe");
-
-        recipeService.save(recipe);
-
-        Assert.assertEquals("test recipe", recipeCollection.findOne().as(Recipe.class).getTitle());
+    void save() {
+        recipeService.save(new Recipe(title: 'test recipe'))
+        assert recipeCollection.findOne().as(Recipe).title == 'test recipe'
     }
 
+
     @Test
-    public void findById() {
-        Recipe recipe = new Recipe();
-        recipe.setTitle("test recipe");
+    void findById() {
+        Recipe recipe = new Recipe()
+        recipe.setTitle("test recipe")
 
-        recipeService.save(recipe);
+        recipeService.save(new Recipe(title: 'test recipe'))
 
-        Assert.assertEquals("test recipe", recipeService.findById(recipe.getId()).getTitle());
+        assert "test recipe" == recipeService.findById(recipe.getId()).getTitle()
     }
 
     @Test
