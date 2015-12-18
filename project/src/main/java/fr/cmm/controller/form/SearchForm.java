@@ -14,9 +14,7 @@ public class SearchForm {
         this.tag = tag;
     }
 
-    public int getPageIndex() {
-        return pageIndex;
-    }
+    public int getPageIndex() { return pageIndex; }
 
     public void setPageIndex(int pageIndex) {
         this.pageIndex = pageIndex;

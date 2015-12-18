@@ -36,9 +36,7 @@ public class Pagination {
         return asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     }
 
-    public int getPageIndex() {
-        return pageIndex;
-    }
+    public int getPageIndex() { return pageIndex; }
 
     public void setPageIndex(int pageIndex) {
         this.pageIndex = pageIndex;
