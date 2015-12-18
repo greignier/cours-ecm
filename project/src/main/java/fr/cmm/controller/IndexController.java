@@ -82,15 +82,19 @@ public class IndexController {
         return "recette";
     }
 
-    @RequestMapping("/contact")
-    public String contact() {
-        return "contact";
-    }
-
     @RequestMapping("/mentions-legales")
     public String mentionsLegales() {
         return "mentions-legales";
     }
 
+    @RequestMapping("/404")
+    public String error404() {
+        return "error";
+    }
+
+    @RequestMapping("/500")
+    public String error500() {
+        return "error";
+    }
 }
 

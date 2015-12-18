@@ -36,6 +36,17 @@
     </filter-mapping>
 
 
+    <!-- Error pages handling -->
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/500</location>
+    </error-page>
+
+
     <servlet>
         <servlet-name>spring</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -43,8 +54,14 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>spring</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/404</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>spring</servlet-name>
+        <url-pattern>/500</url-pattern>
+    </servlet-mapping>
+
+
 
 
     <welcome-file-list>
