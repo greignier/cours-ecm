@@ -127,5 +127,10 @@ public class IndexControllerTest {
         assertTrue(pagination.getPages().size() == pagination.PAGINATION_SIZE);
     }
 
+    @Test
+    public void get404() throws Exception{
+        mockMvc.perform(get("/recette/56375619d4c603aa4eb412dd"))
+                .andExpect(status().is(404));
+    }
 
 }

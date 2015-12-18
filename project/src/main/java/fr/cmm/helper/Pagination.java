@@ -42,7 +42,7 @@ public class Pagination {
         List pageList = new ArrayList<>();
         int i = 1;
         if (getPageCount() < PAGINATION_SIZE) {
-            while (i<getPageCount()+1MVC-5 : getPages() dans Pagination) {
+            while (i<getPageCount()+1) {
                 pageList.add(i);
                 i = i + 1 ;
             }
