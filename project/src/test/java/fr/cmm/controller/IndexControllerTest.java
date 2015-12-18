@@ -2,6 +2,7 @@ package fr.cmm.controller;
 
 import fr.cmm.domain.Recipe;
 import fr.cmm.helper.PageQuery;
+import fr.cmm.helper.Pagination;
 import fr.cmm.service.RecipeService;
 import org.junit.Before;
 import org.junit.Test;
@@ -16,6 +17,8 @@ import org.springframework.web.context.WebApplicationContext;
 import javax.inject.Inject;
 
 import java.util.ArrayList;
+
+import static org.junit.Assert.*;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
@@ -81,10 +84,30 @@ public class IndexControllerTest {
 
     @Test
     public void negativeIndex() throws Exception {
-
         mockMvc.perform(get("/recettes/?pageIndex=-2"))
                 .andExpect(status().is(200));
     }
 
+    @Test
+    public void pagination() throws Exception {
+        Pagination pagination = new Pagination() ;
+
+        pagination.setCount(20);
+        pagination.setPageSize(50);
+        assertEquals(pagination.getPageCount() , 1);
+
+        pagination.setCount(100);
+        pagination.setPageSize(50);
+        assertEquals(pagination.getPageCount() , 2);
+
+        pagination.setCount(50);
+        pagination.setPageSize(20);
+        assertEquals(pagination.getPageCount() , 3);
+
+        pagination.setCount(0);
+        pagination.setPageSize(50);
+        assertEquals(pagination.getPageCount() , 1);
+
+    }
 
 }
