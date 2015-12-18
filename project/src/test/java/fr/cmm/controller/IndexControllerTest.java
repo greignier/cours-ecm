@@ -53,8 +53,7 @@ public class IndexControllerTest {
 
     @Test
     public void contact() throws Exception {
-        mockMvc.perform(get("/contact"))
-                .andExpect(view().name("contact"));
+        mockMvc.perform(get("/contact")).andExpect(view().name("contact"));
     }
 
     @Test

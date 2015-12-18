@@ -40,10 +40,15 @@ public class RecipeService {
     }
 
     public Iterator<Recipe> findRandom(int count) {
+
         return recipeCollection.find("{randomLocation: {$near: [#, 0]}}", Math.random()).limit(count).as(Recipe.class);
     }
 
     public Recipe findById(String id) {
+        try {new ObjectId(id);}
+        catch(IllegalArgumentException e){
+            return null;
+        }
         return recipeCollection.findOne(new ObjectId(id)).as(Recipe.class);
     }
 
